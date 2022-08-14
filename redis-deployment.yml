@@ -6,14 +6,14 @@ spec:
  replicas: 1
  selector:
   matchLabels:
-   components: redis
-  template:
-   metadata:
-    labels:
-     component: redis
-   spec:
-    containers:
-	 - name: redis
-	   image: redis
-	   ports:
-	    - containerPort: 6379
+   component: redis
+ template:
+  metadata:
+   labels:
+    component: redis
+  spec:
+   containers:
+    - name: redis
+      image: redis
+      ports:
+       - containerPort: 6379
