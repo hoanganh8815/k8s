@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Service
 metadata:
  name: postgres-cluster-ip-service
-sepc:
+spec:
  type: ClusterIP
  selector:
   component: postgres
