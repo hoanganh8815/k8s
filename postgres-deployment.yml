@@ -2,10 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
  name: postgres-deployment
-data:
- POSTGRES_DB: postgresdb
- POSTGRES_USER: admin
- POSTGRES_PASSWORD: admin
 spec:
 
  replicas: 1
