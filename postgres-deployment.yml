@@ -2,17 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
  name: postgres-deployment
- labels: 
-  app: postgres
 data:
  POSTGRES_DB: postgresdb
  POSTGRES_USER: admin
  POSTGRES_PASSWORD: admin
 spec:
- volumes:
-  - name: postgres-storage
-    persistentVolumeClaim: 
-     claimName: database-persistent-volume-claim
+
  replicas: 1
  selector:
   matchLabels:
@@ -31,3 +26,7 @@ spec:
        - name: postgres-storage
          mountPath: var/lib/postgresql/data
          subPath: postgres
+   volumes:
+    - name: postgres-storage
+      persistentVolumeClaim: 
+       claimName: database-persistent-volume-claim
